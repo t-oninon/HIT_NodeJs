@@ -7,6 +7,7 @@ exports.login = asyncHandle(async (req, res, next) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
 
+    console.log(user);
     if (!user) {
         return res.status(400).json({ message: "User does not exit" });
     }
