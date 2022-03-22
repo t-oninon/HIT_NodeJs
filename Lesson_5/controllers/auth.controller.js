@@ -20,6 +20,10 @@ exports.login = asyncHandle(async (req, res, next) => {
         { username }, process.env.SECRET_KEY, { expiresIn: '1h' }
     );
 
+    // const Headers = require("node-fetch");
+    // let headers = new Headers();  
+    // headers.append('Authorization','Bearer ' + token);
+    
     res.status(200).json({
         status: "Logged in successfully",
         token: token,

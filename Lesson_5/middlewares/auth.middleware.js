@@ -22,7 +22,7 @@ module.exports.protect = asyncHandle(async (req, res, next) => {
         req.headers.authorization.startsWith("Bearer ");
     if (isRight) {
         const token = req.headers.authorization.split(" ")[1];
-        console.log("PayLoad: ", jwt.verify(token, process.env.SECRET_KEY));
+        console.log(jwt.verify(token, process.env.SECRET_KEY));
     } else {
         return res.status(401).json({ message: "You don't have token! Please login!" });
     }
