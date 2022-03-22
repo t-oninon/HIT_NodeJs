@@ -7,8 +7,6 @@ const dotenv = require("dotenv").config();
 
 app.use(express.json());
 
-console.log(process.env.SECRET_KEY);
-
 mongoose.connect('mongodb://localhost:27017/hit_dev')
     .then(() => {
         console.log('Successfully! Connected to database');
