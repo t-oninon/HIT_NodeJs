@@ -21,9 +21,11 @@ exports.login = asyncHandle(async (req, res, next) => {
     );
 
     // const Headers = require("node-fetch");
-    // let headers = new Headers();  
-    // headers.append('Authorization','Bearer ' + token);
     
+    // res.append('Authorization', ('Bearer ' + token));
+    // res.cookie('token', token);
+
+
     res.status(200).json({
         status: "Logged in successfully",
         token: token,
